@@ -1,0 +1,14 @@
+
+.applist .card
+{
+     transition-duration: 500ms;
+}
+.applist .card:hover
+{
+    transform:scale(1.1,1.1);
+    transition-duration: 500ms;
+}
+.applist a
+{
+    text-decoration: none;
+}
