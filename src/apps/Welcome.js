@@ -1,6 +1,7 @@
 import React from 'react'
 import { FcBusinessman } from "react-icons/fc";
 import { myapplist } from './assets/datalist';
+import { Link } from 'react-router-dom';
 
 function Welcome() {
   return (
@@ -60,10 +61,10 @@ function Welcome() {
         {myapplist.map((c) => {
           return (
             <div className='col-sm-3 mt-3'>
-              <a href='#' className={`card border p-3 text-center shadow ${c.appthems}`}>
+              <Link to={c.approuting} className={`card border p-3 text-center shadow ${c.appthems}`}>
                 <h1><FcBusinessman /></h1>
                 <h5>{c.appname}</h5>
-              </a>
+              </Link>
             </div>
           )
         })}
