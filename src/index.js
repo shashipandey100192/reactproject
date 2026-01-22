@@ -8,6 +8,8 @@ import "./apps/assets/global.css";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import User_login from './apps/modules/users/auth/User_login';
 import User_registor from './apps/modules/users/auth/User_registor';
+import Apperror from './apps/modules/shapremodules/Apperror';
+import Applandingpage from './apps/modules/dashboard/Applandingpage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,6 +20,10 @@ root.render(
           <Route path='/' element={<Welcome/>}/>
           <Route path='usermanagement' element={<User_login/>}></Route>
           <Route path='usermanagement/registor' element={<User_registor/>}></Route>
+          <Route path='dashboard' element={<Applandingpage/>}/>
+
+
+          <Route path='*' element={<Apperror/>}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

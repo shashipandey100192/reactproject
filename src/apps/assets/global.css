@@ -12,3 +12,15 @@
 {
     text-decoration: none;
 }
+.errorpage h1{
+    font-size: 150px;
+}
+.errorpage p
+{
+    font-size: 40px;
+}
+.errorpage
+{
+    background:linear-gradient(rgb(253, 98, 51),rgb(255, 153, 153));
+    height: 100vh;
+}
