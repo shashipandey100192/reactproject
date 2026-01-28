@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import Appsidebar from '../shapremodules/Appsidebar'
+import Mainpage from './Mainpage'
+import Appheader from '../shapremodules/Appheader'
 
 function Applandingpage() {
   return (
-    <div>Applandingpage</div>
+    <Fragment>
+    <Appheader/>
+    <div className="container-fluid">
+      <div className='row'>
+        <div className='col-md-2 border'>
+          <Appsidebar/>
+        </div>
+        <div className='col-md-10 border'>
+          <Mainpage/>
+        </div>
+      </div>
+    </div>
+    </Fragment>
   )
 }
 
