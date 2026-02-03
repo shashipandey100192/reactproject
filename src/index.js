@@ -10,6 +10,9 @@ import User_login from './apps/modules/users/auth/User_login';
 import User_registor from './apps/modules/users/auth/User_registor';
 import Apperror from './apps/modules/shapremodules/Apperror';
 import Applandingpage from './apps/modules/dashboard/Applandingpage';
+import Mainpage from './apps/modules/dashboard/Mainpage';
+import Graphpage from './apps/modules/dashboard/Graphpage';
+import Productpage from './apps/modules/dashboard/Productpage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,7 +23,13 @@ root.render(
           <Route path='/' element={<Welcome/>}/>
           <Route path='usermanagement' element={<User_login/>}></Route>
           <Route path='usermanagement/registor' element={<User_registor/>}></Route>
-          <Route path='dashboard' element={<Applandingpage/>}/>
+          <Route path='dashboard' element={<Applandingpage/>}>
+              <Route path='' element={<Mainpage/>}/>  
+              <Route path='graph' element={<Graphpage/>}/>
+              <Route path='product' element={<Productpage/>}/>
+            <Route path='*' element={<Apperror/>}></Route>
+          </Route>
+
 
 
           <Route path='*' element={<Apperror/>}></Route>

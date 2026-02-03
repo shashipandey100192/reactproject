@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import Appsidebar from '../shapremodules/Appsidebar'
 import Mainpage from './Mainpage'
 import Appheader from '../shapremodules/Appheader'
+import { Outlet } from 'react-router-dom'
 
 function Applandingpage() {
   return (
@@ -13,7 +14,8 @@ function Applandingpage() {
           <Appsidebar/>
         </div>
         <div className='col-md-10 border'>
-          <Mainpage/>
+          <Outlet></Outlet>
+
         </div>
       </div>
     </div>

@@ -25,6 +25,12 @@
     height: 100vh;
 }
 
+.errorpage1
+{
+    background:linear-gradient(rgb(149, 253, 51),rgb(153, 255, 195));
+ 
+}
+
 
 
 .dropdown-toggle { outline: 0; }
