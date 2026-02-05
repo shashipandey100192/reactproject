@@ -14,30 +14,54 @@ function Productpage() {
   }
   useEffect(() => {
     myapi();
-  },[])
+  }, [])
 
 
   return (
     <div className='container-fluid'>
-      <div className='row'>
-
-        {a.map((x)=>{
-          return(
-            <div className='col-md-12'>
-          <div class="card">
-            <img src="..." class="card-img-top" alt="..."/>
-              <div class="card-body">
-                <h5 class="card-title">{x.title} </h5>
-                <p class="card-text">{x.description}</p>
-                <a href="#" class="btn btn-primary"></a>
-              </div>
+      <div className='row shadow mt-2'>
+        <div className='col-md-6 p-3'>
+          <div class="form-check form-check-inline">
+           <select className='form-select'>
+            <option hidden>filter By</option>
+            <option>Price</option>
+            <option>Stock</option>
+            <option>Brand</option>
+            <option>Catgeory</option>
+            
+          </select>
+          </div>
+          <div class="form-check form-check-inline">
+           <select className='form-select'>
+            <option>filter By</option>
+          </select>
           </div>
         </div>
+        <div className='col-md-6 text-end p-3'>
+          <span class="badge text-bg-secondary p-2 me-2">Table</span>
+          <span class="badge text-bg-secondary p-2 me-2">Card</span>
+          <span class="badge text-bg-secondary p-2 me-2">List</span>
+        </div>
+      </div>
+      <div className='row'>
+
+        {a.map((x) => {
+          return (
+            <div className='col-md-3 mt-2'>
+              <div class="card">
+                <img src={x.thumbnail} class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">{x.title} </h5>
+                  <p class="card-text">{x.description}</p>
+                  <a href="#" class="btn btn-primary"></a>
+                </div>
+              </div>
+            </div>
 
           )
 
         })}
-        
+
       </div>
 
 
