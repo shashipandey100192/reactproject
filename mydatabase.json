@@ -1,44 +1,14 @@
 {
   "emp": [
     {
-      "id": "bd9d",
-      "emailid": "sdfsdf@gmailcom",
-      "username": "sdfsdf",
-      "dob": "",
-      "mobileno": "",
-      "gender": "Gender",
-      "picture": "",
-      "pass": "125@oiu"
-    },
-    {
-      "id": "4595",
-      "emailid": "sdfsdf@gmailcom",
-      "username": "sdfsdf",
-      "dob": "2026-02-03",
-      "mobileno": "87845457484",
+      "id": "e262",
+      "emailid": "ravi@gmail.com",
+      "username": "ravi",
+      "dob": "2026-02-04",
+      "mobileno": "6959659",
       "gender": "Female",
       "picture": "https://cdn-icons-png.freepik.com/512/219/219988.png",
-      "pass": "125@oiu"
-    },
-    {
-      "id": "e833",
-      "emailid": "khan@gmail.com",
-      "username": "khan",
-      "dob": "2026-02-04",
-      "mobileno": "9898989898",
-      "gender": "Male",
-      "picture": "https://cdn-icons-png.freepik.com/512/219/219988.png",
-      "pass": "789@qwe"
-    },
-    {
-      "id": "43d8",
-      "emailid": "rohit@gmail.com",
-      "username": "rohit",
-      "dob": "2026-02-11",
-      "mobileno": "6959659",
-      "gender": "Male",
-      "picture": "https://cdn-icons-png.freepik.com/512/219/219988.png",
-      "pass": "123@qwe"
+      "pass": "574@qwe"
     }
   ],
   "students": [],
