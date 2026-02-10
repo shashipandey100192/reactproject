@@ -13,6 +13,7 @@ import Applandingpage from './apps/modules/dashboard/Applandingpage';
 import Mainpage from './apps/modules/dashboard/Mainpage';
 import Graphpage from './apps/modules/dashboard/Graphpage';
 import Productpage from './apps/modules/dashboard/Productpage';
+import Productdetailspage from './apps/modules/dashboard/Productdetailspage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -27,6 +28,7 @@ root.render(
               <Route path='' element={<Mainpage/>}/>  
               <Route path='graph' element={<Graphpage/>}/>
               <Route path='product' element={<Productpage/>}/>
+              <Route path='product/details/:id' element={<Productdetailspage/>}/>
             <Route path='*' element={<Apperror/>}></Route>
           </Route>
 

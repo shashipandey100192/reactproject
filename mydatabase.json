@@ -1,16 +1,5 @@
 {
-  "emp": [
-    {
-      "id": "e262",
-      "emailid": "ravi@gmail.com",
-      "username": "ravi",
-      "dob": "2026-02-04",
-      "mobileno": "6959659",
-      "gender": "Female",
-      "picture": "https://cdn-icons-png.freepik.com/512/219/219988.png",
-      "pass": "574@qwe"
-    }
-  ],
+  "emp": [],
   "students": [],
   "sales": []
 }

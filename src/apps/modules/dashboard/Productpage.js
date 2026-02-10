@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 
 function Productpage() {
 
   const [a, b] = useState([]);
 
   const myapi = () => {
-    axios.get('https://dummyjson.com/products?limit=5').then((d) => {
+    axios.get('https://dummyjson.com/products?limit=50').then((d) => {
       console.log(d.data.products);
       b(d.data.products);
     });
@@ -46,19 +47,44 @@ function Productpage() {
       <div className='row'>
 
         {a.map((x) => {
+          if(x.price>=50)
+          {
           return (
             <div className='col-md-3 mt-2'>
+              <Link to={"details/"+x.id}>
+              <div class="card bg-info">
+                <img src={x.thumbnail} class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">{x.title} </h5>
+                  <h3>Rs. {x.price}</h3>
+                  <p class="card-text">{x.description}</p>
+                 
+                </div>
+              </div>
+              </Link>
+            </div>
+
+          )
+        }
+        else
+        {
+          return (
+            <div className='col-md-3 mt-2'>
+              <Link to={"details/"+x.id}>
               <div class="card">
                 <img src={x.thumbnail} class="card-img-top" alt="..." />
                 <div class="card-body">
                   <h5 class="card-title">{x.title} </h5>
+                  <h3>Rs. {x.price}</h3>
                   <p class="card-text">{x.description}</p>
-                  <a href="#" class="btn btn-primary"></a>
+                 
                 </div>
               </div>
+              </Link>
             </div>
 
           )
+        }
 
         })}
 
