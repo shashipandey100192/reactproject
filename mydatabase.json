@@ -1,5 +1,144 @@
 {
   "emp": [],
   "students": [],
-  "sales": []
+  "sales": [
+    {
+      "product_name": "Product 1",
+      "price": 10.99,
+      "stock": 100,
+      "discount": 5
+    },
+    {
+      "product_name": "Product 2",
+      "price": 12.49,
+      "stock": 150,
+      "discount": 10
+    },
+    {
+      "product_name": "Product 3",
+      "price": 8.75,
+      "stock": 200,
+      "discount": 0
+    },
+    {
+      "product_name": "Product 4",
+      "price": 15.99,
+      "stock": 75,
+      "discount": 8
+    },
+    {
+      "product_name": "Product 5",
+      "price": 22.50,
+      "stock": 50,
+      "discount": 15
+    },
+    {
+      "product_name": "Product 6",
+      "price": 18.00,
+      "stock": 120,
+      "discount": 7
+    },
+    {
+      "product_name": "Product 7",
+      "price": 9.99,
+      "stock": 340,
+      "discount": 12
+    },
+    {
+      "product_name": "Product 8",
+      "price": 14.30,
+      "stock": 90,
+      "discount": 3
+    },
+    {
+      "product_name": "Product 9",
+      "price": 27.80,
+      "stock": 65,
+      "discount": 20
+    },
+    {
+      "product_name": "Product 10",
+      "price": 31.99,
+      "stock": 30,
+      "discount": 5
+    },
+    {
+      "product_name": "Product 11",
+      "price": 7.25,
+      "stock": 410,
+      "discount": 0
+    },
+    {
+      "product_name": "Product 12",
+      "price": 19.49,
+      "stock": 80,
+      "discount": 10
+    },
+    {
+      "product_name": "Product 13",
+      "price": 11.99,
+      "stock": 300,
+      "discount": 5
+    },
+    {
+      "product_name": "Product 14",
+      "price": 16.75,
+      "stock": 140,
+      "discount": 12
+    },
+    {
+      "product_name": "Product 15",
+      "price": 24.00,
+      "stock": 55,
+      "discount": 18
+    },
+    {
+      "product_name": "Product 16",
+      "price": 21.40,
+      "stock": 95,
+      "discount": 6
+    },
+    {
+      "product_name": "Product 17",
+      "price": 29.99,
+      "stock": 40,
+      "discount": 10
+    },
+    {
+      "product_name": "Product 18",
+      "price": 6.99,
+      "stock": 500,
+      "discount": 0
+    },
+    {
+      "product_name": "Product 19",
+      "price": 13.50,
+      "stock": 230,
+      "discount": 7
+    },
+    {
+      "product_name": "Product 20",
+      "price": 17.88,
+      "stock": 180,
+      "discount": 4
+    },
+    {
+      "product_name": "Product 21",
+      "price": 9.49,
+      "stock": 320,
+      "discount": 8
+    },
+    {
+      "product_name": "Product 99",
+      "price": 26.30,
+      "stock": 95,
+      "discount": 5
+    },
+    {
+      "product_name": "Product 100",
+      "price": 31.99,
+      "stock": 60,
+      "discount": 15
+    }
+  ]
 }

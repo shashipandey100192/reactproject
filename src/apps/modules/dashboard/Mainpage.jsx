@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Mycustomgraph } from './Graphpage';
 
 function Mainpage() {
   const [user, updateuser] = useState([]);
@@ -95,7 +96,7 @@ const deletedata = (a)=>{
           <div class="card mb-3 shadow border">
             <div class="card-body">
               <h5 class="card-title">Primary card title</h5>
-              <p class="card-text">card’s content.</p>
+              <Mycustomgraph/>
             </div>
           </div>
         </div>
