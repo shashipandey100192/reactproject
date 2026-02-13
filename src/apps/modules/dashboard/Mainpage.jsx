@@ -1,28 +1,35 @@
-import React, { useEffect, useState } from 'react'
+import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 import { Mycustomgraph } from './Graphpage';
+import UserTable from './UserTable';
+import Eyetable from './Eyetable';
 
 function Mainpage() {
+
   const [user, updateuser] = useState([]);
+  const [cgreen,updategreen]=useState([]);
 
   const getdata = () => {
-    axios.get('http://localhost:8700/emp').then((d) => {
-      console.log(d.data);
-      updateuser(d.data);
+    axios.get('https://dummyjson.com/users').then((d) => {
+      console.log(d.data.users);
+      updateuser(d.data.users);
+      
+      updategreen(d.data.users.filter((e)=>{
+          return e.eyeColor==="Hazel"
+      }));
+
     })
   }
   useEffect(() => {
     getdata()
   }, []);
 
-const deletedata = (a)=>{
-  axios.delete(`http://localhost:8700/emp/${a}`).then((r)=>{
-    console.log(r);
-    getdata();
-  })
 
+  
+const username = "empname";
+const btn = ()=>{
+  alert("welcome to parent ");
 }
-
 
   return (
     <div className='container-fluid'>
@@ -92,7 +99,7 @@ const deletedata = (a)=>{
           </div>
         </div>
 
-        <div className='col-md-8 mt-3'>
+        <div className='col-md-7 mt-3'>
           <div class="card mb-3 shadow border">
             <div class="card-body">
               <h5 class="card-title">Primary card title</h5>
@@ -100,57 +107,16 @@ const deletedata = (a)=>{
             </div>
           </div>
         </div>
-        <div className='col-md-4 mt-3'>
+        <div className='col-md-5 mt-3'>
           <div class="card mb-3 shadow border">
             <div class="card-body">
               <h5 class="card-title">Primary card title</h5>
-              <p class="card-text">card’s content.</p>
+              <Eyetable userlist={cgreen}></Eyetable>
             </div>
           </div>
         </div>
         <div className='col-md-12 mt-3'>
-          <div class="card mb-3 shadow border">
-            <div class="card-body">
-
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">sno</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">DOB</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Username</th>
-                    <th scope="col">Mobile</th>
-                    <th scope="col">Actions</th>
-                    
-                  </tr>
-                </thead>
-                <tbody>
-                  {user.map((u)=>{
-                    return(
-                      <tr>
-                    <th scope="row">{u.id}</th>
-                    <td>{u.emailid}</td>
-                    <td>{u.dob}</td>
-                    <td>{u.gender}</td>
-                    <td>{u.username}</td>
-                    <td>{u.mobileno}</td>
-                    <td> 
-                      <span class="badge text-bg-primary">View</span>
-                      <span class="badge text-bg-danger" onClick={()=>deletedata(u.id)}>Del</span>
-                      <span class="badge text-bg-warning">Edit</span>
-
-
-                    </td>
-                  </tr>
-                    )
-                  })}
-                  
-
-                </tbody>
-              </table>
-            </div>
-          </div>
+          <UserTable xyz={username} myaction = {btn}></UserTable>
         </div>
 
       </div>
