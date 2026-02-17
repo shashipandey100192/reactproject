@@ -1,8 +1,8 @@
 import React from 'react'
+import Datafooterpage from './Datafooterpage';
 
 function Eyetable(props) {
     const a = props.userlist;
-    console.log(a);
 
     return (
         <table class="table">
@@ -35,6 +35,11 @@ function Eyetable(props) {
             <tfoot>
                 <tr>
                     <td>{a.length}</td>
+                    </tr>
+                    <tr>
+                        <td colSpan={6}>
+                            <Datafooterpage dlength={a} />
+                        </td>
                     </tr>
             </tfoot>
         </table>

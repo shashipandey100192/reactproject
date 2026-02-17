@@ -41,7 +41,7 @@ function User_login() {
         }
         else {
             toast.success("welcome to dashboard",{position:"top-left",theme:'dark',autoClose:2000});
-
+            localStorage.setItem("userpass",JSON.stringify({jemail:email,jpass:pass}));
             setTimeout(() => {
                 mynav("/dashboard");
             }, 2000);

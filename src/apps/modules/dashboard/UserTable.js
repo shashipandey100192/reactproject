@@ -38,7 +38,6 @@ const deletedata = (a)=>{
                     <th scope="col">Username</th>
                     <th scope="col">Mobile</th>
                     <th scope="col">Actions</th>
-                    
                   </tr>
                 </thead>
                 <tbody>
