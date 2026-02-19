@@ -3,6 +3,8 @@ import axios from 'axios'
 import { Mycustomgraph } from './Graphpage';
 import UserTable from './UserTable';
 import Eyetable from './Eyetable';
+import { useSelector,useDispatch } from 'react-redux';
+import { increment,changename } from '../reduxpage/Myfunctions';
 
 function Mainpage() {
 
@@ -24,13 +26,14 @@ function Mainpage() {
     getdata()
   }, []);
 
+  const xyz =useDispatch();
 
   
 const username = "empname";
 const btn = ()=>{
   alert("welcome to parent ");
 }
-
+const abc = useSelector((a)=>a.counter.salary);
   return (
     <div className='container-fluid'>
       <div className='row'>
@@ -39,6 +42,8 @@ const btn = ()=>{
             <div class="card-body">
               <h5 class="card-title">Primary card title</h5>
               <p class="card-text">card’s content.</p>
+              <h2>{abc}</h2>
+              <input type='button' className='btn btn-success' value="change value" onClick={()=>xyz(increment())}/>
             </div>
           </div>
         </div>

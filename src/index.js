@@ -14,11 +14,15 @@ import Mainpage from './apps/modules/dashboard/Mainpage';
 import Graphpage from './apps/modules/dashboard/Graphpage';
 import Productpage from './apps/modules/dashboard/Productpage';
 import Productdetailspage from './apps/modules/dashboard/Productdetailspage';
+import { Provider } from 'react-redux';
+import { actionstore } from './apps/modules/reduxpage/Mystore';
+import Reduxwebpage from './apps/modules/reduxpage/Reduxwebpage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store={actionstore}>
     <BrowserRouter>
       <Routes>
           <Route path='/' element={<Welcome/>}/>
@@ -29,13 +33,12 @@ root.render(
               <Route path='graph' element={<Graphpage/>}/>
               <Route path='product' element={<Productpage/>}/>
               <Route path='product/details/:id' element={<Productdetailspage/>}/>
+              <Route path='redux' element={<Reduxwebpage/>}/>
             <Route path='*' element={<Apperror/>}></Route>
           </Route>
-
-
-
           <Route path='*' element={<Apperror/>}></Route>
       </Routes>
     </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
