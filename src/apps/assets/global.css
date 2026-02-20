@@ -79,3 +79,13 @@
 .scrollarea {
   overflow-y: auto;
 }
+.myloader
+{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 0, 0, 0.5);
+  color:white;
+  line-height: 80vh;
+  text-align: center;
+
+}

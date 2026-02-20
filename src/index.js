@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import Welcome from './apps/Welcome';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -17,6 +17,8 @@ import Productdetailspage from './apps/modules/dashboard/Productdetailspage';
 import { Provider } from 'react-redux';
 import { actionstore } from './apps/modules/reduxpage/Mystore';
 import Reduxwebpage from './apps/modules/reduxpage/Reduxwebpage';
+// import Lazypage from './apps/modules/dashboard/Lazypage';
+const Lazypage = lazy(()=>import('./apps/modules/dashboard/Lazypage'));
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -34,6 +36,11 @@ root.render(
               <Route path='product' element={<Productpage/>}/>
               <Route path='product/details/:id' element={<Productdetailspage/>}/>
               <Route path='redux' element={<Reduxwebpage/>}/>
+              <Route path='lazypage' element={
+                <Suspense fallback={<h1 className='myloader'>loading Content...</h1>}>
+                  <Lazypage/>
+                </Suspense>
+              }></Route>
             <Route path='*' element={<Apperror/>}></Route>
           </Route>
           <Route path='*' element={<Apperror/>}></Route>
