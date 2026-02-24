@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import "./output.css";
 import "./apps/assets/global.css";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Router } from 'react-router-dom';
 import User_login from './apps/modules/users/auth/User_login';
 import User_registor from './apps/modules/users/auth/User_registor';
 import Apperror from './apps/modules/shapremodules/Apperror';
@@ -17,6 +17,7 @@ import Productdetailspage from './apps/modules/dashboard/Productdetailspage';
 import { Provider } from 'react-redux';
 import { actionstore } from './apps/modules/reduxpage/Mystore';
 import Reduxwebpage from './apps/modules/reduxpage/Reduxwebpage';
+import Mycanander from './apps/modules/dashboard/Mycanander';
 // import Lazypage from './apps/modules/dashboard/Lazypage';
 const Lazypage = lazy(()=>import('./apps/modules/dashboard/Lazypage'));
 
@@ -41,6 +42,7 @@ root.render(
                   <Lazypage/>
                 </Suspense>
               }></Route>
+              <Route path='fullcalander' element={<Mycanander/>}/>
             <Route path='*' element={<Apperror/>}></Route>
           </Route>
           <Route path='*' element={<Apperror/>}></Route>

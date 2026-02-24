@@ -89,3 +89,12 @@
   text-align: center;
 
 }
+
+.css-5wchs2-MuiDateCalendar-root
+{
+  width: 100% !important;
+}
+.css-1rl1vrc-MuiDayCalendar-header,.css-1pv2de5-MuiDayCalendar-weekContainer
+{
+  justify-content: space-between !important;
+}
