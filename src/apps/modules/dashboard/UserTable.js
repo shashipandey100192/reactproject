@@ -1,22 +1,28 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 function UserTable(props) {
     const [user, updateuser] = useState([]);
 
   const getdata = () => {
-    axios.get('http://localhost:8700/emp').then((d) => {
-      console.log(d.data);
-      updateuser(d.data);
+   
+    axios.get('http://localhost:8700/alluserlist',{withCredentials: true}).then((d) => {
+      console.log(d.data.emplist);
+      updateuser(d.data.emplist);
     })
   }
+
   useEffect(() => {
     getdata()
   }, []);
 
-const deletedata = (a)=>{
-  axios.delete(`http://localhost:8700/emp/${a}`).then((r)=>{
+
+
+
+const deletedata = async (a)=>{
+  await axios.delete(`http://localhost:8700/userdelete/${a}`).then((r)=>{
     console.log(r);
     getdata();
   })
@@ -26,8 +32,8 @@ const deletedata = (a)=>{
   return (
     <div class="card mb-3 shadow border">
             <div class="card-body">
-    {props.xyz}
-    <button className="btn btn-success btn-sm" onClick={props.myaction}>msg</button>
+    <p>Employee List: [ {user.length} ]</p>
+    
               <table class="table">
                 <thead>
                   <tr>
@@ -37,6 +43,8 @@ const deletedata = (a)=>{
                     <th scope="col">Gender</th>
                     <th scope="col">Username</th>
                     <th scope="col">Mobile</th>
+                    <th scope="col">Pass</th>
+                    <th scope="col">Profile</th>
                     <th scope="col">Actions</th>
                   </tr>
                 </thead>
@@ -44,16 +52,18 @@ const deletedata = (a)=>{
                   {user.map((u)=>{
                     return(
                       <tr>
-                    <th scope="row">{u.id}</th>
+                    <th scope="row">{u._id}</th>
                     <td>{u.emailid}</td>
                     <td>{u.dob}</td>
                     <td>{u.gender}</td>
                     <td>{u.username}</td>
                     <td>{u.mobileno}</td>
+                    <td>{u.password}</td>
+                    <td><img src={u.picture} width="30" alt={u.username}/></td>
                     <td> 
-                      <span class="badge text-bg-primary">View</span>
-                      <span class="badge text-bg-danger" onClick={()=>deletedata(u.id)}>Del</span>
-                      <span class="badge text-bg-warning">Edit</span>
+                      <span class="badge text-bg-primary btn">View</span>
+                      <span class="badge text-bg-danger ms-1 btn" onClick={()=>deletedata(u._id)}>Del</span>
+                      <Link to={"edituser/"+u._id} class="badge text-bg-warning ms-1 btn">Edit</Link>
 
 
                     </td>

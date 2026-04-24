@@ -18,6 +18,7 @@ import { Provider } from 'react-redux';
 import { actionstore } from './apps/modules/reduxpage/Mystore';
 import Reduxwebpage from './apps/modules/reduxpage/Reduxwebpage';
 import Mycanander from './apps/modules/dashboard/Mycanander';
+import User_edit from './apps/modules/users/auth/User_edit';
 // import Lazypage from './apps/modules/dashboard/Lazypage';
 const Lazypage = lazy(()=>import('./apps/modules/dashboard/Lazypage'));
 
@@ -33,6 +34,8 @@ root.render(
           <Route path='usermanagement/registor' element={<User_registor/>}></Route>
           <Route path='dashboard' element={<Applandingpage/>}>
               <Route path='' element={<Mainpage/>}/>  
+              <Route path='edituser/:id' element={<User_edit/>}/>  
+              
               <Route path='graph' element={<Graphpage/>}/>
               <Route path='product' element={<Productpage/>}/>
               <Route path='product/details/:id' element={<Productdetailspage/>}/>
